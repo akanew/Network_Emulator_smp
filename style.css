@@ -1,0 +1,179 @@
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: -20px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 60%;
+	height: 335px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 1% 13px 1%;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.modalDialog > div > h3 {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+	///////////////////////
+
+.draggable, #droppable {/*font-size: large; border: thin solid black; padding: 10px;
+	width: 100px; text-align: center; background-color: lightgray; margin: 4px;*/}
+#droppable {/*padding: 20px; position: absolute; right: 5px;*/}
+
+body {
+	margin: 0 auto;
+}
+
+#devices {
+	float: left;
+	width: 224px;
+	background: #f0f0f0;
+	height: 400px;
+}
+
+#devices > img {
+	//width: 80%;
+	margin: 10px;
+}
+
+#workArea {
+	margin-left: 228px;
+	float: left;
+	width: 79%;
+	height: 400px;
+	position: absolute;
+}
+
+.master {
+	z-index: 1001;
+	border: 2px solid black;
+}
+
+.slave {
+	//float: none;
+	//position: absolute;
+	z-index: 1000;
+}
+
+#hr {
+	float: left;
+	border-right: 3px solid black;
+	height: 400px;
+}
+
+.line{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+.pcName {
+	width: 96%;
+	margin: 1% 1% 0 1.5%;
+	margin-top: 10px;
+	border: 2px solid black;
+	text-align: center;
+}
+
+.pcParameters {
+	width: 96.7%;
+	margin: -1px 1% 1% 1.5%;
+	border: 1px solid black;
+	padding: 3px 0;
+}
+
+#pcFailure {
+	width: 28%;
+}
+
+.selected {
+	border: 2px solid black;
+}
+
+hr {
+	margin: 2px;
+}
+
+ul, li {
+	list-style: none; /* убираем маркеры списка */
+	padding: 0; /* убираем отступы у Ul и LI */
+	margin: 0; /* убираем поля */
+}
+
+ul {
+}
+
+.space {
+	margin-left: 7px;
+}
+
+.linkFailure
+{
+	width: 28%;
+}
+
+#calculate {
+	margin-left: 30px;
+}
+
+#leftStatisticsIB {
+	width: 49%;
+	float: left;
+}
+
+#rightStatisticsIB {
+	width: 49%;
+	float: right;
+}
+#pcListText
+{
+	width: 99%;
+}
+
+.btns{
+	margin-top: 10px;
+}

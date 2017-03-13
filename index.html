@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/Chart.min.js"></script>
+	<script src="./js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div id='devices'>
+		<!-- Устройства -->
+		<img id="m1" class="draggable master" src='./imgs/pc2.jpg' alt='1'/>
+		<img id="m2"class="draggable master" src='./imgs/router.png' alt='2'/>
+		<hr/>
+		<!-- Кнопки -->
+		<input id="createLink" type="submit" value="Создать связь" style="margin-left: 5px;"/>
+		<input id="removeLink" type="submit" value="Удалить связь" disabled/>
+		<hr/>
+		<input id='getPcList' type="submit" value="Вернуть исх. данные сети" style="margin-left: 25px; margin-bottom: 2px;"/>
+		<input id='setPcList' type="submit" value="Сформировать по исх. данным" style="margin-left: 8px;"/>
+		<hr/>
+		<input id="calculate" type="submit" value="Произвести анализ сети"/>
+		<hr/>
+		<!-- Кнопка вызова модального окна -->
+		<input id='openModalButton' type="submit" value="Открыть модальное окно" style="margin-left: 27px;"/>
+		<hr/>
+		<!-- Параметры устройства -->
+		<div class='settings pcName'>Параметры устройства</div>
+		<div class='settings pcParameters'>
+			<label for="failure">Отказоустойчивость:</label>
+			<input id="pcFailure" name="failure" />
+			<label for="links">Линии связи: отсутствуют</label>
+			<ul name='links' id='linksList'>
+			</ul>
+			<hr/>
+			<input id='setPcList' type="submit" value="Удалить узел" style="margin-left: 58px;"/>
+		</div>
+		<div class="btns">
+			<hr/>
+			<label for="cntInLoop" style="margin-left:3px">Количество итераций</label>
+			<input id="iterationCnt" name="cntInLoop" type="number" value="10000" style="width:60px; float:right; margin-right:5px;"></input>
+			<div style="margin:3px 0 3px 3px; float:left;">
+				<label for="recoverySelect" style="margin-right:3px;">Восстановление:</label>
+				<select id="recoverySelect" name="recoverySelect" style="float:right;">
+					<option value="0">Отсутствует</option>
+					<option value="1">FIFO</option>
+					<!--<option value="2">IF</option>-->
+				</select>
+			</div>
+			<label for="cntInWorkers" style="margin:0 0 3px 3px">Количество бригад</label>
+			<input id="cntWorkers" name="cntInWorkers" type="number" value="2" style="width:60px; float:right; margin-right:5px;"></input>
+			<label for="intensive" style="margin: 7px 0 0 3px; float:left;">Интенсивность</label>
+			<input id="intensive" name="intensive" type="number" value="0.5" style="width:60px; float:right; margin:5px 5px 0 0;"></input>
+		</div>
+	</div>
+	<!-- Разделитель -->
+	<div id='hr'></div>
+	<!-- Рабочая область -->
+	<div id='workArea'></div>	
+	<!-- Модальное окно -->
+	<div id="openModal" class="modalDialog">
+		<div>
+			<a href="#close" title="Закрыть" class="close">X</a>
+			<h3>Статистика отказоустойчивости сети</h3>
+			<!-- <Поле IO> -->
+			<div id='pcListForm'>
+				<textarea id='pcListText' rows='16'></textarea>
+				<input id='pcListSubmit' type='submit' value='Создать сеть' style='float: right;'/>
+			</div>
+			<!-- </Поле IO> -->
+			
+			<!-- <Область отрисовки графиков> -->
+			<div id="leftStatisticsIB">
+				<!--<header>213213</header>-->
+				<div id="leftChartDiv">
+					<canvas id="myChart2"></canvas>
+				</div>
+			</div>
+			<div id="rightStatisticsIB">
+				<!--<header>123</header>-->
+				<div id="rightChartDiv">
+					<canvas id="myChart"></canvas>
+				</div>
+			</div>
+			<div id="centerStatisticsIB" style="width:100%;float:left;">
+			</div>
+			<!-- </Область отрисовки графиков> -->
+		</div>
+	</div>	
+</body>
+</html>
